@@ -42,8 +42,27 @@ class TalkingDog(Dog):
         else:
             print('hello')
 
+    def __str__(self):
+        return f'Breed:{self.breed}\nSpeed:{self.speed}\nBark Strength: {self.bark_strength}/100 \nAge:{self.age}'
 
-wolf= TalkingDog(breed = "Wolf", speed= "20mph", bark_strength=80, age=40)
+    def __add__(self, other):
+        return f'Combined-Speed:({self.speed} + {other.speed})'
+        # Struggling with this one!
 
-wolf.bark()
-wolf.dog_years()
+
+wolf= TalkingDog(breed = "Wolf", speed= "20mph", bark_strength=80, age=6)
+
+# print(wolf)
+
+print(wolf, husky)
+
+
+# ANSWERS:
+
+# - What is the difference between __len__() and len()  in python?
+
+    #  __len__() is customizable in calling the length
+    # len() calls and returns the length without any customization
+
+# - What is the purpose of __init__?
+    # __init__ is a function that assigns values to object properties when the object is being created
