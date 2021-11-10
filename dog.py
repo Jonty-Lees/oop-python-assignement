@@ -42,20 +42,26 @@ class TalkingDog(Dog):
         else:
             print('hello')
 
+# ASSIGNMENT ADDITIONS
+
     def __str__(self):
-        return f'Breed:{self.breed}\nSpeed:{self.speed}\nBark Strength: {self.bark_strength}/100 \nAge:{self.age}'
+        return f'Breed:{self.breed}\nSpeed:{self.speed}mph\nBark Strength: {self.bark_strength}/100 \nAge:{self.age}'
 
     def __add__(self, other):
-        return f'Combined-Speed:({self.speed} + {other.speed})'
-        # Struggling with this one!
+        combined_speed = self.speed + other.speed
+        combined_bark_strenght= self.bark_strength + other.bark_strength
+        combined_breed = self.breed + other.breed
+        return f'Deadly Speed:{combined_speed},\nDeadly Bark:{combined_bark_strenght}/100\nGood Luck trying to escape the {combined_breed} '
+
+wolf= TalkingDog(breed = "Wolf", speed= 85, bark_strength=80, age=6)
+poodle= TalkingDog(breed = "Poodle", speed= 3, bark_strength=100, age=2)
 
 
-wolf= TalkingDog(breed = "Wolf", speed= "20mph", bark_strength=80, age=6)
+print(wolf)
 
-# print(wolf)
+superDog = wolf + poodle
 
-print(wolf, husky)
-
+print(superDog)
 
 # ANSWERS:
 
